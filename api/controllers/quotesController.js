@@ -1,8 +1,8 @@
 
 const axios = require('axios');
 const nameHandler = require('./nameController');
+
 const key = "4822|Zd8NKyDNmmji8eEaUfLUqrf01TAG5DKp"
-//
 
 
 module.exports = {

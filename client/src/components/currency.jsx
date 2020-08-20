@@ -13,7 +13,7 @@ export default class Header extends Component{
           .then(res => this.setState({apiResponse: res}))
       }
       componentWillMount(){
-        setInterval(this.callApi(), 5000); 
+        this.callApi(); 
       }
     render() {
         return(
