@@ -1,30 +1,15 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import Currency from './components/currency'
+import './assets/css/App.css';
 
-class App extends React.Component{
-  constructor(props){
-    super(props);
-    this.state = {apiResponse: ""};
-  }
-
-  callApi(){
-    fetch("http://localhost:9000/cotizacion")
-      .then(res => res.text())
-      .then(res => this.setState({apiResponse: res}))
-  }
-
-  componentWillMount(){
-    this.callApi();
-  }
-
+class App extends Component{
   render(){
     return(
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-        </header>
-        <p>{this.state.apiResponse}</p>
+        <Currency currency = {'dolar'} />
+        <Currency currency = {'euro'} />
+        <Currency currency = {'real'} />
+        <p>{}</p>
       </div>
     );
   }
