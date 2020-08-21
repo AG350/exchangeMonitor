@@ -36,6 +36,6 @@ _las url de la api las acceden desde localhost:9000 :
 /cotizacion/euro
 /cotizacion/real 
 
-/cotizacion/selected/\<[CODIGOS DISPONIBLES](https://cambio.today/api/currencies/list\>
+/cotizacion/selected/\< [CODIGOS DISPONIBLES](https://cambio.today/api/currencies/list) \>
 
 
