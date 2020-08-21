@@ -8,12 +8,14 @@ export default class Header extends Component{
         this.state = {apiResponse: ""};
       }
       callApi(){
-        fetch(`http://localhost:9000/cotizacion/`+ this.props.currency)
+        fetch(`https://exchange-server-app.herokuapp.com/cotizacion/`+ this.props.currency)
           .then(res => res.text())
           .then(res => this.setState({apiResponse: res}))
       }
       componentWillMount(){
-        this.callApi(); 
+        setInterval(() => {
+          this.callApi(); 
+        }, 5000);
       }
     render() {
         return(
