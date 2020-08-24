@@ -5,23 +5,37 @@ export default class Header extends Component{
     constructor(props){
         super(props);
         
-        this.state = {apiResponse: ""};
+        this.state = {data:false};
       }
-      callApi(){
-        fetch(`https://exchange-server-app.herokuapp.com/cotizacion/`+ this.props.currency)
-          .then(res => res.text())
-          .then(res => this.setState({apiResponse: res}))
+
+      getValues(){
+        fetch(`https://exchange-server-app.herokuapp.com/cotizacion/`+this.props.currency,
+          {method: 'GET',
+              headers:{
+                'Accept' : 'application/json',
+                'Content-Type' : 'application/json'
+              }
+          })
+          .then((result)=>{
+            result.json().
+              then((result)=>{
+                this.setState({data: result})
+              })
+          })
       }
-      componentWillMount(){
-        this.callApi();
+
+      componentDidMount(){
+        this.getValues();
         setInterval(() => {
-          this.callApi(); 
+          this.getValues();
         }, 5000);
       }
-    render() {
+      render() {
+        let data = this.state.data;
         return(
             <div className="Currency-body">
-                <p className="Currency-content"> {this.state.apiResponse}</p>
+                <p className="Currency-content">Nombre: {data.name}</p>
+                <p className="Currency-content">Precio: ${data.precio}</p>
             </div>
         )
     }
