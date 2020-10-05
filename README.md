@@ -1,8 +1,8 @@
 # Monitor de Cotizacion de Monedas Extrangeras
 
-### [Demo Api(dolar)](https://exchange-server-app.herokuapp.com/cotizacion/dolar)
-### [Demo Api(euro)](https://exchange-server-app.herokuapp.com/cotizacion/euro)
-### [Demo Api(real)](https://exchange-server-app.herokuapp.com/cotizacion/real)
+### [endpoint dolar](https://exchange-server-app.herokuapp.com/cotizacion/dolar)
+### [Endpoint euro](https://exchange-server-app.herokuapp.com/cotizacion/euro)
+### [Endpoint real](https://exchange-server-app.herokuapp.com/cotizacion/real)
 ### [Demo Front](https://get-quote-app.herokuapp.com/)
 
 _ Las demos fueron implementadas en Heroku
